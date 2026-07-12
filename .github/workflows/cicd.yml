@@ -20,7 +20,7 @@ jobs:
                 password: ${{ secrets.DOCKER_PASS }}
             - name: Push image
               run:
-                docker push murwanashyaka1/cicd-portfolio .
+                docker push murwanashyaka1/cicd-portfolio 
 
 
 
