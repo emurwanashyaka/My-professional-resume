@@ -5,6 +5,9 @@ on:
         #pull_request:
         #    branches: ['main', 'dev']
         branches: [ 'main' ]
+permissions:
+    id-token: write
+    contents:  read
 
 jobs:
     build_scan:
@@ -30,6 +33,12 @@ jobs:
                 severity: CRITICAL,HIGH  
             - name: Push image to Ecr
               run: echo "push"  
-            
-              
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v4 # More information on this action can be found below in the 'AWS Credentials' section
+              with:
+                role-to-assume: arn:aws:iam::417651893878:oidc-provider/token.actions.githubusercontent.com
+                aws-region: us-east-1
+            - name: login to Amazon ECR
+              id: login-ecr    
+              uses: aws-actions/amazon-ecr-login@v2
 
