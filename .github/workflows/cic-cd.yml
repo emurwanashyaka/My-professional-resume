@@ -28,7 +28,7 @@ jobs:
                 exit-code: 1
                 ignore-unfixed: true
                 severity: CRITICAL,HIGH
-            - name: Push  image to Ecr
+            - name: Push image to Ecr
               run: echo "push"  
             
               
