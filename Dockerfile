@@ -4,4 +4,4 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 COPY ./index.html  /usr/local/apache2/htdocs/
-EXPOSE 80
+EXPOSE 85
