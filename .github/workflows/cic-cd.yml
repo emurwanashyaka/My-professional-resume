@@ -42,3 +42,6 @@ jobs:
               id: login-ecr    
               uses: aws-actions/amazon-ecr-login@v2
 
+            - name: Push Image to Ecr
+              run: 417651893878.dkr.ecr.us-east-1.amazonaws.com/my-repo:latest 
+
